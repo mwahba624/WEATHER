@@ -41,10 +41,16 @@ class WeatherService {
   //private baseURL = `${process.env.API_BASE_URL}`;
   //private apiKey = `${process.env.API_KEY}`;
   protected cityName: string = '';
+  
   //set method for cityName
   set(cityName: string) {
     this.cityName = cityName;
   }
+
+  get() {
+    return this.cityName;
+  }
+
   logCity() {
     console.log(this.cityName);
   }
