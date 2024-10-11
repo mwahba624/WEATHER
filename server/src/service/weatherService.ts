@@ -41,7 +41,7 @@ class WeatherService {
   //private baseURL = `${process.env.API_BASE_URL}`;
   //private apiKey = `${process.env.API_KEY}`;
   protected cityName: string = '';
-  
+
   //set method for cityName
   set(cityName: string) {
     this.cityName = cityName;
@@ -86,7 +86,7 @@ class WeatherService {
       dataArray.map((item: any) => {
         const date = new Date(item.dt_txt.slice(0, 10).replace(/-/g, "/"));
         const localeString = date.toLocaleDateString();
-        console.log(localeString);
+        
         const weather = new Weather(
           this.cityName,
           localeString,
