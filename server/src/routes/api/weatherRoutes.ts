@@ -9,6 +9,7 @@ router.post('/', async (req: Request, res: Response) => { // post request to the
   // TODO: GET weather data from city name
   const { cityName } = req.body;
   if(req.body) {
+    try {
     //than set city property value
     weatherService.set(cityName); // set the city property value to the city name passed in the request body
     //get coordinates - lat and lon
@@ -21,6 +22,9 @@ router.post('/', async (req: Request, res: Response) => { // post request to the
     //respond with data - NOTE: WE NEED TO TRANSFORM SHAPE THE DATA INTO WHAT THE FROM-END IS EXPECTING - this res.json(data) might need to be done below - using historyService to store current city weather info - refer to week9 mini project for example.
     //res.json(data)
     res.json(data); // respond with the weather data in JSON format
+    } catch (err) {
+      res.json(new Error(`City is not Valid`));
+    }
   }else {
       res.send('request error!');
   }
