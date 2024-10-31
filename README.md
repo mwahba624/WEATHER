@@ -8,7 +8,7 @@ The Weather Dashboard application provides a user-friendly way to view current a
 ## Installation
 - Git clone 
 - npm install
-- OPENWEATHER_API_KEY=your_api_key_here
+- API_KEY=your_api_key_here
 - npm run start:dev
 
 ## Table of contents
